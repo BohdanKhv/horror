@@ -1,5 +1,3 @@
-import { faker } from "@faker-js/faker"
-
 const words = ["sadness", "emptiness", "loss", "depression", "despair", "shame","fear", "death", "war", "blood", "kill", "murder", "fire"]
 const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 const num = '0123456789'
