@@ -12,14 +12,14 @@ const Home = () => {
     const [rightCount, setRightCount] = useState(5)
     const [yNum, setYNum] = useState(20)
     const [letterNum, setLetterNum] = useState(6)
-    const [animation, setAnimation] = useState(faker.datatype.number({ min: 1, max: 10 }))
+    const [animation, setAnimation] = useState(faker.datatype.number({ min: 1, max: 11 }))
 
     const [obsurb, setObsurb] = useState(false)
 
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setAnimation(faker.datatype.number({ min: 1, max: 10 }))
+            setAnimation(faker.datatype.number({ min: 1, max: 11 }))
             setMiddleCount(faker.datatype.number({ min: 1, max: 3 }))
             setLetterNum(faker.datatype.number({ min: 1, max: 6 }))
         }, 5000)

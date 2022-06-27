@@ -1,6 +1,7 @@
-import { faker } from "@faker-js/faker"
 
 const words = ["sadness", "emptiness", "loss", "depression", "despair", "shame","fear", "death", "war", "blood", "kill", "murder", "fire"]
+const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+const num = '0123456789'
 
 const MainLine = ({middleCount, counterX, counterY, yNum, letterNum, obsurb}) => {
     return (
@@ -13,9 +14,13 @@ const MainLine = ({middleCount, counterX, counterY, yNum, letterNum, obsurb}) =>
                         obsurb ?
                             words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                         : counterY > j ?
-                            (faker.datatype.number({ min: 1000, max: 9999 }) + counterX).toString().slice(0, letterNum)
+                            Array.from({length: letterNum}).map((_, i) => 
+                                num.charAt(Math.floor(Math.random() * num.length))
+                            )
                         :
-                        faker.random.alphaNumeric(letterNum)
+                            Array.from({length: letterNum}).map((_, i) => 
+                                characters.charAt(Math.floor(Math.random() * characters.length))
+                            )
                         }
                     </div>
                 ))}

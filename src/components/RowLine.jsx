@@ -1,6 +1,8 @@
 import { faker } from "@faker-js/faker"
 
 const words = ["sadness", "emptiness", "loss", "depression", "despair", "shame","fear", "death", "war", "blood", "kill", "murder", "fire"]
+const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+const num = '0123456789'
 
 const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}) => {
     return (
@@ -13,9 +15,13 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}
                                 { obsurb ?
                                     words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                                 : counterY > j ?
-                                    (faker.datatype.number({ min: 1000, max: 99999 }) + counterX).toString().slice(0, letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        num.charAt(Math.floor(Math.random() * num.length))
+                                    )
                                 :
-                                    faker.random.alphaNumeric(letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        characters.charAt(Math.floor(Math.random() * characters.length))
+                                    )
                                 }
                             </div>
                         : animation === 2 ?
@@ -28,19 +34,27 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}
                             { obsurb ?
                                     words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                                 : counterY > j ?
-                                (faker.datatype.number({ min: 1000, max: 99999 }) + counterX).toString().slice(0, letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        num.charAt(Math.floor(Math.random() * num.length))
+                                    )
                             :
-                                faker.random.alphaNumeric(letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        characters.charAt(Math.floor(Math.random() * characters.length))
+                                    )
                             }
                         </div>
                         : animation === 3 ?
-                        <div key={`w-${j}`} className={`py-1 w-20 ${yNum % counterY === j || yNum % counterY+1 === j ? obsurb ? 'text-red-500' : 'text-green-500' : j % 2 === 0 ? 'text-white' : obsurb ? 'text-red-900' : 'text-gray-800'}`}>
+                        <div key={`w-${j}`} className={`py-1 w-20 ${yNum % counterY === j || yNum % counterY+1 === j ? obsurb ? 'text-red-500' : 'text-green-500' : j % 2 === 0 ? 'text-gray-600' : obsurb ? 'text-red-900' : 'text-gray-800'}`}>
                             { obsurb ?
                                     words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                                 : counterY > j ?
-                                (faker.datatype.number({ min: 1000, max: 99999 }) + counterX).toString().slice(0, letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        num.charAt(Math.floor(Math.random() * num.length))
+                                    )
                             :
-                                faker.random.alphaNumeric(letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        characters.charAt(Math.floor(Math.random() * characters.length))
+                                    )
                             }
                         </div>
                         : animation === 4 ?
@@ -48,9 +62,13 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}
                             { obsurb ?
                                     words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                                 : counterY > j ?
-                                (faker.datatype.number({ min: 1000, max: 99999 }) + counterX).toString().slice(0, letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        num.charAt(Math.floor(Math.random() * num.length))
+                                    )
                             :
-                                faker.random.alphaNumeric(letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        characters.charAt(Math.floor(Math.random() * characters.length))
+                                    )
                             }
                         </div>
                         : animation === 5 ?
@@ -58,9 +76,13 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}
                             { obsurb ?
                                     words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                                 : counterY > j ?
-                                (faker.datatype.number({ min: 1000, max: 99999 }) + counterX).toString().slice(0, letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        num.charAt(Math.floor(Math.random() * num.length))
+                                    )
                             :
-                                faker.random.alphaNumeric(letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        characters.charAt(Math.floor(Math.random() * characters.length))
+                                    )
                             }
                         </div>
                         : animation === 6 ?
@@ -68,9 +90,13 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}
                             { obsurb ?
                                     words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                                 : counterY > j ?
-                                (faker.datatype.number({ min: 1000, max: 99999 }) + counterX).toString().slice(0, letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        num.charAt(Math.floor(Math.random() * num.length))
+                                    )
                             :
-                                faker.random.alphaNumeric(letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        characters.charAt(Math.floor(Math.random() * characters.length))
+                                    )
                             }
                         </div>
                         : animation === 7 ?
@@ -83,9 +109,13 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}
                             { obsurb ?
                                     words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                                 : counterX > j ?
-                                (faker.datatype.number({ min: 1000, max: 99999 }) + counterX).toString().slice(0, letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        num.charAt(Math.floor(Math.random() * num.length))
+                                    )
                             :
-                                faker.random.alphaNumeric(letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        characters.charAt(Math.floor(Math.random() * characters.length))
+                                    )
                             }
                         </div>
                         : animation === 8 ?
@@ -93,9 +123,13 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}
                             { obsurb ?
                                 words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                             : counterY *-1 > i ?
-                                (faker.datatype.number({ min: 1000, max: 99999 }) + counterX).toString().slice(0, letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        num.charAt(Math.floor(Math.random() * num.length))
+                                    )
                             :
-                                faker.random.alphaNumeric(letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        characters.charAt(Math.floor(Math.random() * characters.length))
+                                    )
                             }
                         </div>
                         : animation === 9 ?
@@ -103,9 +137,13 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}
                                 { obsurb ?
                                         words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                                     : counterY > j ?
-                                    (faker.datatype.number({ min: 1000, max: 99999 }) + counterX).toString().slice(0, letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        num.charAt(Math.floor(Math.random() * num.length))
+                                    )
                                 :
-                                    faker.random.alphaNumeric(letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        characters.charAt(Math.floor(Math.random() * characters.length))
+                                    )
                                 }
                             </div>
                         : animation === 10 ?
@@ -113,9 +151,32 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}
                             { obsurb ?
                                     words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                                 : counterY > j ?
-                                (faker.datatype.number({ min: 1000, max: 99999 }) + counterX).toString().slice(0, letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        num.charAt(Math.floor(Math.random() * num.length))
+                                    )
                             :
-                                faker.random.alphaNumeric(letterNum)
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        characters.charAt(Math.floor(Math.random() * characters.length))
+                                    )
+                            }
+                        </div>
+                        : animation === 11 ?
+                        <div key={`w-${j}`} className={`py-1 w-20 ${counterY === i ? 'text-white' :
+                            counterY === i-1 ? 'text-gray-500' :
+                            counterY === i+1 ? 'text-gray-500' :
+                        counterX+1 ===i || counterX-1 === i ? 
+                        obsurb ? 'text-red-300' : 'text-green-300'  : counterX === i ? 
+                        obsurb ? 'text-red-500' : 'text-green-500' : obsurb ? 'text-red-900' : 'text-gray-800' }`}>
+                            { obsurb ?
+                                    words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
+                                : counterX > j ?
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        num.charAt(Math.floor(Math.random() * num.length))
+                                    )
+                            :
+                                    Array.from({length: letterNum}).map((_, i) => 
+                                        characters.charAt(Math.floor(Math.random() * characters.length))
+                                    )
                             }
                         </div>
                         :
