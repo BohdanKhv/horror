@@ -39,7 +39,7 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation}) => {
                             }
                         </div>
                         : animation === 5 ?
-                        <div key={`w-${j}`} className={`py-1 w-12 ${j >= yNum / 2 ? 'text-yellow-300' : 'text-blue-400'} ${j > counterY ? 'opacity-50' : ''}`}>
+                        <div key={`w-${j}`} className={`py-1 w-12 ${j >= yNum / 2 ? 'text-yellow-300' : 'text-blue-400'} ${j+5 > counterY && j-5 <counterY ? 'opacity-50' : ''}`}>
                             {counterY > j ?
                                 (faker.datatype.number({ min: 1000, max: 99999 }) + counterX).toString().slice(0, letterNum)
                             :

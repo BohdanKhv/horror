@@ -18,7 +18,7 @@ const Home = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setAnimation(faker.datatype.number({ min: 1, max: 5 }))
-            setMiddleCount(faker.datatype.number({ min: 1, max: 5 }))
+            setMiddleCount(faker.datatype.number({ min: 1, max: 3 }))
             setLetterNum(faker.datatype.number({ min: 1, max: 4 }))
             console.log('animation')
         }, 5000)
@@ -35,7 +35,7 @@ const Home = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCounterY(counterY > yNum ? 0 : counterY + 1)
+            setCounterY(counterY > yNum ? 0-yNum : counterY + 1)
         }, 100)
         return () => clearInterval(interval)
     }, [counterY])
