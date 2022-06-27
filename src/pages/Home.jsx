@@ -12,7 +12,7 @@ const Home = () => {
     const [rightCount, setRightCount] = useState(5)
     const [yNum, setYNum] = useState(20)
     const [letterNum, setLetterNum] = useState(6)
-    const [animation, setAnimation] = useState(10)
+    const [animation, setAnimation] = useState(faker.datatype.number({ min: 1, max: 10 }))
 
     const [obsurb, setObsurb] = useState(false)
 
@@ -30,14 +30,14 @@ const Home = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCounterX(counterX > leftCount ? 0 : counterX + 1)
-        }, 50)
+        }, obsurb ? 25 : 100)
         return () => clearInterval(interval)
     }, [counterX])
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCounterY(counterY > yNum ? 0-yNum : counterY + 1)
-        }, 50)
+        }, obsurb ? 25 : 100)
         return () => clearInterval(interval)
     }, [counterY])
 
