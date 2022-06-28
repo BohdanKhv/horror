@@ -36,6 +36,11 @@ const Home = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCounterY(counterY > yNum ? 0-yNum : counterY + 1)
+            if(obsurb) {
+                if(document.querySelector('audio').paused) {
+                    document.querySelector('audio').play()
+                }
+            }
         }, obsurb ? 25 : 100)
         return () => clearInterval(interval)
     }, [counterY])
