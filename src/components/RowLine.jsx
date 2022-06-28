@@ -70,7 +70,7 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}
                             }
                         </div>
                         : animation === 5 ?
-                        <div key={`w-${j}`} className={`py-1 w-20 ${j >= yNum / 2 ? obsurb ? 'text-red-800' : 'text-yellow-300' : obsurb ? 'text-red-400' : 'text-blue-400'} ${j+5 > counterY && j-5 <counterY ? 'opacity-50' : ''}`}>
+                        <div key={`w-${j}`} className={`py-1 w-20 ${j >= yNum / 2 ? obsurb ? 'text-red-800' : 'text-gray-300' : obsurb ? 'text-red-400' : 'text-green-400'} ${j+5 > counterY && j-5 <counterY ? 'opacity-50' : ''}`}>
                             { obsurb ?
                                     words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                                 : counterY > j ?
@@ -84,7 +84,7 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}
                             }
                         </div>
                         : animation === 6 ?
-                        <div key={`w-${j}`} className={`py-1 w-20 ${j >= yNum / 2 ? obsurb ? 'text-red-800' : 'text-yellow-300' : obsurb ? 'text-red-400' : 'text-blue-400'} ${j+5 > counterY && j-5 <counterY ? 'opacity-50' : ''}`}>
+                        <div key={`w-${j}`} className={`py-1 w-20 ${j >= yNum / 2 ? obsurb ? 'text-red-800' : 'text-gray-300' : obsurb ? 'text-red-400' : 'text-green-400'} ${j+5 > counterY && j-5 <counterY ? 'opacity-50' : ''}`}>
                             { obsurb ?
                                     words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                                 : counterY > j ?
@@ -145,7 +145,7 @@ const RowLine = ({count, yNum, counterX, counterY, letterNum, animation, obsurb}
                                 }
                             </div>
                         : animation === 10 ?
-                        <div key={`w-${j}`} className={`py-1 w-20 ${j >= yNum / 2 ? obsurb ? 'bg-red-800' : 'bg-yellow-300' : obsurb ? 'bg-red-400' : 'bg-blue-400'} ${j+5 > counterY * -1 && j-5 <counterY * -1 ? 'opacity-50' : ''}`}>
+                        <div key={`w-${j}`} className={`py-1 w-20 ${j >= yNum / 2 ? obsurb ? 'bg-red-800' : 'bg-gray-400' : obsurb ? 'bg-red-400' : 'bg-green-400'} ${j+5 > counterY * -1 && j-5 <counterY * -1 ? 'opacity-50' : ''}`}>
                             { obsurb ?
                                     words[Math.floor(Math.random() * words.length)].slice(0, letterNum)
                                 : counterY > j ?

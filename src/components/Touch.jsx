@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import obsurb from '../assets/obsurb.mp3'
+import faces from '../assets/images'
 
-const Touch = ({setObsurb}) => {
+const Touch = ({setObsurb, setFaceRand}) => {
     const [open, setOpen] = useState(false)
 
     useEffect(() => {
@@ -11,6 +12,7 @@ const Touch = ({setObsurb}) => {
             // document.querySelector('.obsurb').clientX = e.clientX - 132
             // document.querySelector('.obsurb').clientY = e.clientY - 132
             document.querySelector('audio').play()
+            setFaceRand(Math.floor(Math.random() * (8 - 0) + 0))
         })
         window.addEventListener("mousemove", (e) => {
             // document.querySelector('.obsurb').clientX = e.clientX - 132
@@ -27,6 +29,7 @@ const Touch = ({setObsurb}) => {
             // document.querySelector('.obsurb').clientX = e.touches[0].pageX - 132
             // document.querySelector('.obsurb').clientY = e.touches[0].pageY - 132
             document.querySelector('audio').play()
+            setFaceRand(Math.floor(Math.random() * (8 - 0) + 0))
         })
         window.addEventListener("touchmove", (e) => {
             // document.querySelector('.obsurb').clientX = e.touches[0].pageX - 132

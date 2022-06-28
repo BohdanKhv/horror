@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { MainLine, RowLine, Touch } from '../components'
-import obsurbFace from '../assets/obsurbFace.jpg'
+import faces from '../assets/images'
 
 
 const Home = () => {
@@ -11,6 +11,7 @@ const Home = () => {
     const [rightCount, setRightCount] = useState(5)
     const [yNum, setYNum] = useState(20)
     const [letterNum, setLetterNum] = useState(6)
+    const [faceRand, setFaceRand] = useState(0)
     const [animation, setAnimation] = useState(Math.floor(Math.random() * (11 - 1) + 1))
 
     const [obsurb, setObsurb] = useState(false)
@@ -40,6 +41,10 @@ const Home = () => {
                 if(document.querySelector('audio').paused) {
                     document.querySelector('audio').play()
                 }
+            } else {
+                if(!document.querySelector('audio').paused) {
+                    document.querySelector('audio').pause()
+                }
             }
         }, obsurb ? 25 : 100)
         return () => clearInterval(interval)
@@ -48,7 +53,9 @@ const Home = () => {
     return (
         <div className="bg-black w-screen h-screen overflow-hidden relative bg-contain bg-center bg-no-repeat"
             style={{
-                backgroundImage: obsurb ? `url(${obsurbFace})` : '',
+                backgroundImage: obsurb ? `url(${
+                    faces[faceRand]
+                })` : '',
             }}
         >
             <div className="flex justify-center items-center h-full gap-1 text-center overflow-hidden select-none">
@@ -82,6 +89,7 @@ const Home = () => {
                 />
                 <Touch
                     setObsurb={setObsurb}
+                    setFaceRand={setFaceRand}
                 />
             </div>
         </div>
